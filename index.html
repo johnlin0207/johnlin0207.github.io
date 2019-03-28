@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TodoList</title>
-    <base href="/" />
-<link href="/css/style_main_6c527334661353e2bb58795d46a8e049.css" rel="stylesheet"></head>
-<body>
-<div id="root"></div>
-<script type="text/javascript" src="js/vendor_124fc2fa.js"></script><script type="text/javascript" src="js/main_124fc2fa.js"></script></body>
-</html>
+　　layout: default
+　　title: 我的Blog
+　　---
+
+　　<h2>{{ page.title }}</h2>
+
+　　<p>最新文章</p>
+
+　　<ul>
+
+　　　　{% for post in site.posts %}
+
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+　　　　{% endfor %}
+
+　　</ul>
